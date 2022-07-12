@@ -5,9 +5,9 @@ const { saveToDatabase, paginator } = require("./utils");
 
 const getAllEmployees = (filterParams) => {
   try {
-    let employees = DB.employees;
+    let employeesDB = DB.employees;
     if (filterParams.email) {
-      employees = employees.filter((employee) =>
+      employees = employeesDB.filter((employee) =>
         employee.email.toLowerCase().includes(filterParams.email)
       );
     }
@@ -29,6 +29,7 @@ const createNewEmployee = (newEmployee) => {
       };
     }
     DB.employees.push(newEmployee);
+    console.log(newEmployee);
     saveToDatabase(DB);
     return newEmployee;
   } catch (error) {
