@@ -49,8 +49,8 @@ Attach txt file, with field name as "file" <br/>
 
 
 # STARTING SERVER
-## change directory into cloned project 
-## install dependencies
+change directory into cloned project 
+install dependencies
 npm install 
 ## run the server 
 npm run start
