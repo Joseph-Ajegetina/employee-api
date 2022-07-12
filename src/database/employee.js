@@ -10,8 +10,9 @@ const getAllEmployees = (filterParams) => {
       employees = employeesDB.filter((employee) =>
         employee.email.toLowerCase().includes(filterParams.email)
       );
+      return employees;
     }
-    return paginator(employees, filterParams.page);
+    return paginator(employeesDB, filterParams.page);
   } catch (error) {
     throw { status: 500, message: error };
   }
@@ -29,7 +30,6 @@ const createNewEmployee = (newEmployee) => {
       };
     }
     DB.employees.push(newEmployee);
-    console.log(newEmployee);
     saveToDatabase(DB);
     return newEmployee;
   } catch (error) {
