@@ -24,6 +24,7 @@ const createNewEmployee = (newEmployee) => {
       DB.employees.findIndex((employee) => employee.name === newEmployee.name) >
       -1;
     if (isAlreadyAdded) {
+      
       throw {
         status: 400,
         message: `Employee with the name '${newEmployee.name}' already exists`,
@@ -46,7 +47,7 @@ const createEmployeesFromFile = async (filePath) => {
       "address",
       "phone",
       "email",
-      "birthdate",
+      "dob",
     ];
     let employees = await csv({headers:fileHeaders}).fromFile(filePath)
     employees.forEach(employeeFile => {

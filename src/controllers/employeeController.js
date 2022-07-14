@@ -75,7 +75,7 @@ const createEmployee = (req, res) => {
   };
   try {
     const createdEmployee = employeeService.createEmployee(createNewEmployee);
-    res.status(201).send({ status: "OK", data: createdEmployee });
+    res.status(201).send({ status: "OK", data: [createdEmployee] });
   } catch (error) {
     res
       .status(error?.status || 500)
@@ -135,6 +135,7 @@ const deleteEmployee = (req, res) => {
   }
   try {
     const employee = employeeService.deleteEmployee(employeeId);
+    console.log("here")
     res.send({ status: "OK" });
   } catch (error) {
     res

@@ -8,7 +8,7 @@ global.__basedir = __dirname;
 const v1EmployeeRouter = require("./src/v1/routes/employeeRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 
 
